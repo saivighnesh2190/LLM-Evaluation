@@ -3,7 +3,7 @@ import utils
 PROMPTS_FILE="prompts.json"
     
 def main():
-    results=[]
+    results:list=[]
     prompts=utils.load_json(PROMPTS_FILE)
     for prompt in prompts:
         model_details=api.ask_llm(prompt["prompt"])

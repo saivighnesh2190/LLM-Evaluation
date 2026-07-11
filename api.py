@@ -31,7 +31,7 @@ def ask_llm(prompt: str)->dict[str,Any] | None:
         return None
     try:
         return {
-            "responses": data["choices"][0]["message"]["content"],
+            "response": data["choices"][0]["message"]["content"],
             "model": data["model"],
             "prompt_tokens": data["usage"]["prompt_tokens"],
             "completion_tokens": data["usage"]["completion_tokens"],
