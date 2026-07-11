@@ -1,0 +1,14 @@
+[
+    {
+        "id": 1,
+        "prompt": "What is Artificial Intelligence?"
+    },
+    {
+        "id": 2,
+        "prompt": "Explain Retrieval-Augmented Generation."
+    },
+    {
+        "id": 3,
+        "prompt": "What is an embedding?"
+    }
+]

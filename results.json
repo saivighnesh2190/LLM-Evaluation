@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "prompt": "What is Artificial Intelligence?",
+        "response": "Mock response for: What is Artificial Intelligence?",
+        "model_name": "mock-llm",
+        "latency": 0.15
+    },
+    {
+        "id": 2,
+        "prompt": "Explain Retrieval-Augmented Generation.",
+        "response": "Mock response for: Explain Retrieval-Augmented Generation.",
+        "model_name": "mock-llm",
+        "latency": 0.15
+    },
+    {
+        "id": 3,
+        "prompt": "What is an embedding?",
+        "response": "Mock response for: What is an embedding?",
+        "model_name": "mock-llm",
+        "latency": 0.15
+    }
+]
