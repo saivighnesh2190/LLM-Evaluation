@@ -4,7 +4,8 @@ from typing import Any
 import network
 import time
 from logger_config import logger
-    
+import logging
+logger = logging.getLogger(__name__)
 def ask_llm(prompt: str)->dict[str,Any] | None:
 
     payload = {

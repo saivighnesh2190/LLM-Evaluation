@@ -2,8 +2,8 @@ from typing import Any
 import requests
 import config
 import time
-from logger_config import logger
-
+import logging
+logger = logging.getLogger(__name__)
 
 def make_get_request(url: str) -> Any | None:
     try:
@@ -32,10 +32,13 @@ def make_post_request(
             response.raise_for_status()
             return response.json()
         except requests.exceptions.HTTPError as e:
-            if response is not None and response.status_code == 429 and attempt < 2:
-                time.sleep(2 ** attempt)
+            if response.status_code == 429:
+                wait_time=2** attempt
+                logger.warning(f"Attempt {attempt+1}/3:"
+                    f"429 received .Retrying in {wait_time} seconds...")
+                time.sleep(wait_time)
                 continue
-            logger.error("NETWORK ERROR:", e)
+            logger.error("Maximum retries exceeded.")
             return None
         except requests.exceptions.RequestException as e:
             logger.error("NETWORK ERROR:", e)

@@ -1,14 +1,16 @@
 import api
 import utils
 from logger_config import logger
+import logging
 PROMPTS_FILE = "prompts.json"
+logger = logging.getLogger(__name__)
 
 
 def main():
     logger.info("Application started")
     results: list = []
     prompts = utils.load_json(PROMPTS_FILE)
-    logger.info(f"Loaded{len(prompts)} prompts")
+    logger.info(f"Loaded {len(prompts)} prompts")
 
     if not isinstance(prompts, list):
         logger.error(f"Error: '{PROMPTS_FILE}' must contain a JSON array.")
