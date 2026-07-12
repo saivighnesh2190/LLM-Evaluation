@@ -1,4 +1,5 @@
 from typing import Any
+import logger_config
 import requests
 import config
 import time
@@ -23,6 +24,7 @@ def make_post_request(
     for attempt in range(3):
         response = None
         try:
+            logger.info(f"sending the request -> -> ->")
             response = requests.post(
                 url,
                 headers=headers,
@@ -30,6 +32,7 @@ def make_post_request(
                 timeout=config.TIMEOUT,
             )
             response.raise_for_status()
+            logger.info("getting the request <- <- <-")
             return response.json()
         except requests.exceptions.HTTPError as e:
             if response.status_code == 429:

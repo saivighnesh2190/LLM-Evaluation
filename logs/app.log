@@ -10,3 +10,16 @@
 2026-07-12 23:27:03,256 | INFO | LLM-Evaluator | Sending request to model :deepseek-v4-flash-free
 2026-07-12 23:28:09,599 | INFO | LLM-Evaluator | Response recieved Successfully
 2026-07-12 23:28:09,604 | INFO | LLM-Evaluator | Saved 3 result(s) to results.json
+2026-07-13 00:06:21,372 | INFO | test | test log line after fix
+2026-07-13 00:07:54,767 | INFO | __main__ | Application started
+2026-07-13 00:07:54,767 | INFO | __main__ | Loaded 3 prompts
+2026-07-13 00:07:54,767 | INFO | __main__ | Processing Prompt ID 1
+2026-07-13 00:07:54,767 | INFO | api | Sending request to model :deepseek-v4-flash-free
+2026-07-13 00:08:32,456 | INFO | api | Response recieved Successfully
+2026-07-13 00:08:32,456 | INFO | __main__ | Processing Prompt ID 2
+2026-07-13 00:08:32,456 | INFO | api | Sending request to model :deepseek-v4-flash-free
+2026-07-13 00:09:16,695 | INFO | api | Response recieved Successfully
+2026-07-13 00:09:16,695 | INFO | __main__ | Processing Prompt ID 3
+2026-07-13 00:09:16,695 | INFO | api | Sending request to model :deepseek-v4-flash-free
+2026-07-13 00:09:56,725 | INFO | api | Response recieved Successfully
+2026-07-13 00:09:56,725 | INFO | __main__ | Saved 3 result(s) to results.json

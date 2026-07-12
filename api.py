@@ -3,7 +3,7 @@ import config
 from typing import Any
 import network
 import time
-
+import logger_config
 import logging
 logger = logging.getLogger(__name__)
 def ask_llm(prompt: str)->dict[str,Any] | None:

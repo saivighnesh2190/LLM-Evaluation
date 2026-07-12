@@ -1,6 +1,8 @@
+import logger_config  
 import api
 import utils
 import logging
+
 PROMPTS_FILE = "prompts.json"
 logger = logging.getLogger(__name__)
 
