@@ -3,7 +3,7 @@ import config
 from typing import Any
 import network
 import time
-
+from logger_config import logger
     
 def ask_llm(prompt: str)->dict[str,Any] | None:
 
@@ -20,6 +20,7 @@ def ask_llm(prompt: str)->dict[str,Any] | None:
         "Authorization": f"Bearer {config.API_KEY}",
         "Content-Type": "application/json"
     }
+    logger.info(f"Sending request to model :{config.MODEL_NAME}")
     start=time.perf_counter()
     data = network.make_post_request(
         config.BASE_URL,
@@ -27,6 +28,7 @@ def ask_llm(prompt: str)->dict[str,Any] | None:
         payload
     )
     latency=time.perf_counter()-start
+    logger.info(f"Response recieved Successfully")
     if data is None:
         return None
     try:
@@ -38,7 +40,8 @@ def ask_llm(prompt: str)->dict[str,Any] | None:
             "total_tokens": data["usage"]["total_tokens"],
             "latency":round(latency,3)
         }
-    except (KeyError,IndexError,TypeError):
+    except (KeyError,IndexError,TypeError) as e:
+        logger.error(f"Failed to parse API response:{e}")
         return None
 
     

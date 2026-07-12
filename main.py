@@ -1,25 +1,28 @@
 import api
 import utils
-
+from logger_config import logger
 PROMPTS_FILE = "prompts.json"
 
 
 def main():
+    logger.info("Application started")
     results: list = []
     prompts = utils.load_json(PROMPTS_FILE)
+    logger.info(f"Loaded{len(prompts)} prompts")
 
     if not isinstance(prompts, list):
-        print(f"Error: '{PROMPTS_FILE}' must contain a JSON array.")
+        logger.error(f"Error: '{PROMPTS_FILE}' must contain a JSON array.")
         return
 
     if not prompts:
-        print(f"Error: No prompts found in '{PROMPTS_FILE}'.")
+        logger.error(f"Error: No prompts found in '{PROMPTS_FILE}'.")
         return
 
     for prompt in prompts:
+        logger.info(f"Processing Prompt ID {prompt['id']}")
         model_details = api.ask_llm(prompt["prompt"])
         if model_details is None:
-            print(f"Skipping prompt {prompt.get('id')}: request failed.")
+            logger.error(f"Skipping prompt {prompt.get('id')}: request failed.")
             continue
 
         result = {
@@ -35,11 +38,11 @@ def main():
         results.append(result)
 
     if not results:
-        print("No results were generated.")
+        logger.error("No results were generated.")
         return
 
     utils.save_json(results, "results.json")
-    print(f"Saved {len(results)} result(s) to results.json")
+    logger.info(f"Saved {len(results)} result(s) to results.json")
 
 
 if __name__ == "__main__":

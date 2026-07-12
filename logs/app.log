@@ -1,0 +1,12 @@
+2026-07-12 23:25:03,672 | INFO | LLM-Evaluator | Application started
+2026-07-12 23:25:03,672 | INFO | LLM-Evaluator | Loaded3 prompts
+2026-07-12 23:25:03,672 | INFO | LLM-Evaluator | Processing Prompt ID 1
+2026-07-12 23:25:03,672 | INFO | LLM-Evaluator | Sending request to model :deepseek-v4-flash-free
+2026-07-12 23:26:07,480 | INFO | LLM-Evaluator | Response recieved Successfully
+2026-07-12 23:26:07,480 | INFO | LLM-Evaluator | Processing Prompt ID 2
+2026-07-12 23:26:07,480 | INFO | LLM-Evaluator | Sending request to model :deepseek-v4-flash-free
+2026-07-12 23:27:03,256 | INFO | LLM-Evaluator | Response recieved Successfully
+2026-07-12 23:27:03,256 | INFO | LLM-Evaluator | Processing Prompt ID 3
+2026-07-12 23:27:03,256 | INFO | LLM-Evaluator | Sending request to model :deepseek-v4-flash-free
+2026-07-12 23:28:09,599 | INFO | LLM-Evaluator | Response recieved Successfully
+2026-07-12 23:28:09,604 | INFO | LLM-Evaluator | Saved 3 result(s) to results.json

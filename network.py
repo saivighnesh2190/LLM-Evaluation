@@ -2,6 +2,7 @@ from typing import Any
 import requests
 import config
 import time
+from logger_config import logger
 
 
 def make_get_request(url: str) -> Any | None:
@@ -34,8 +35,8 @@ def make_post_request(
             if response is not None and response.status_code == 429 and attempt < 2:
                 time.sleep(2 ** attempt)
                 continue
-            print("NETWORK ERROR:", e)
+            logger.error("NETWORK ERROR:", e)
             return None
         except requests.exceptions.RequestException as e:
-            print("NETWORK ERROR:", e)
+            logger.error("NETWORK ERROR:", e)
             return None
